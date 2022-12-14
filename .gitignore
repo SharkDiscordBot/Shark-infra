@@ -1,0 +1,6 @@
+# 各エディタの設定ファイルなど
+.vscode/
+
+# osのファイル
+.DS_Store
+Thumbs.db
