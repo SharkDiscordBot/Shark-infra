@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io # cascade deletion on this App deletion
+spec:
+  project: default
+  source:
+    chart: kube-prometheus-stack
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: HERD
+    helm:
+      releaseName: prometheus
+      skipCrds: true
+      values: |
+        defaultRules:
+            rules:
+              alertmanager: true
+        grafana:
+          defaultDashboardsTimezone: "Asia/Tokyo"
+          plugins:
+            - grafana-piechart-panel
+          grafana.ini:
+            

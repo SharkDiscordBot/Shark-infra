@@ -4,3 +4,5 @@ resources:
   - configs/ingress.yaml
 patches:
   - configs/install-patch.yaml
+  - configs/argocd-cm.yaml
+  - configs/argocd-repo-patch.yaml
