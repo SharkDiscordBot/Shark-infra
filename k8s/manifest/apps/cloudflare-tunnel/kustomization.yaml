@@ -1,0 +1,6 @@
+namespace: cloudflared
+
+
+resources:
+  - grafana.yaml
+  - cloudflared-pvc.yaml

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana-cloudflared
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: grafana-cloudflared
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        name: grafana-cloudflared
+    spec:
+      containers:
+        - env:
+            - name: TUNNEL_NAME
+              value: grafana
+            - name: CLOUDFLARED_HOSTNAME
+              value: admin-grafana.purapetino.com
+            - name: CLOUDFLARED_SERVICE
+              value: prometheus-grafana.monitoring:80
+          image: ghcr.io/purapetino/cloudflared-tunnel:1.0.0-2022.10.3
+          name: grafana-cloudflared
+          resources:
+            limits:
+              cpu: 70m
+              memory: 512Mi
+          volumeMounts:
+            - mountPath: /root
+              name: cloudflared
+      volumes:
+        - name: cloudflared
+          persistentVolumeClaim:
+            claimName: cloudflared-pvc
+status: {}

@@ -6,11 +6,15 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io # cascade deletion on this App deletion
 spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
   project: default
   source:
     chart: kube-prometheus-stack
     repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: HERD
+    
     helm:
       releaseName: prometheus
       skipCrds: true
@@ -23,4 +27,54 @@ spec:
           plugins:
             - grafana-piechart-panel
           grafana.ini:
-            
+            server:
+              enforce_domain: true
+              domain: admin-grafana.purapetino.com
+              root_url: https://%(domain)s/
+            date_formats:
+              default_timezone: Asia/Tokyo
+            auth:
+              disable_login_form: true
+              oauth_auto_login: true
+            auth:
+              disable_login_form: true
+              oauth_auto_login: true
+            auth.github:
+              enabled: true
+              allow_sign_up: true
+              client_id: client_id
+              client_secret: client_key
+              scopes: user:email,read:org
+              auth_url: https://github.com/login/oauth/authorize
+              token_url: https://github.com/login/oauth/access_token
+              api_url: https://api.github.com/user
+              allowed_organizations: SharkDiscordBot
+            security:
+              cookie_secure: true
+              strict_transport_security: true
+              content_security_policy: true
+          envFromSecret: "grafana-secret"
+          persistence:
+            enabled: true
+            size: 5Gi
+          datasources:
+            datasources.yaml:
+              apiVersion: 1
+              datasources:
+                - name: Prometheus
+                  type: prometheus
+                  url: http://prometheus-kube-prometheus-prometheus:9090
+                  isDefault: true
+
+
+        prometheus:
+          prometheusSpec:
+            storageSpec:
+              volumeClaimTemplate:
+                spec:
+                  resources:
+                    requests:
+                      storage: 10Gi
+            resources:
+              requests:
+                memory: 2Gi

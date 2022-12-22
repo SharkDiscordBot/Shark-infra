@@ -1,0 +1,7 @@
+resources:
+  - ./pv-0001.yaml
+  - ./pv-0002.yaml
+  - ./pv-0003.yaml
+  - ./pv-0004.yaml
+  - ./pv-0005.yaml
+  - ./pv-0006.yaml

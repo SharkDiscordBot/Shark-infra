@@ -4,3 +4,6 @@
 # osのファイル
 .DS_Store
 Thumbs.db
+
+# 管理用
+Diagram/
