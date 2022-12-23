@@ -22,7 +22,7 @@ spec:
               value: admin-grafana.purapetino.com
             - name: CLOUDFLARED_SERVICE
               value: prometheus-grafana.monitoring:80
-          image: ghcr.io/purapetino/cloudflared-tunnel:1.0.0-2022.10.3
+          image: ghcr.io/purapetino/cloudflared-tunnel:1.0.1-2022.12.1
           name: grafana-cloudflared
           resources:
             limits:
