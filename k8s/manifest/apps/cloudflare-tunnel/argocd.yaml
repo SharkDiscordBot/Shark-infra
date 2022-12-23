@@ -14,7 +14,7 @@ spec:
       containers:
         - env:
             - name: TUNNEL_NAME
-              value: grafana
+              value: argocd
             - name: CLOUDFLARED_HOSTNAME
               value: admin-argocd.purapetino.com
             - name: CLOUDFLARED_SERVICE
