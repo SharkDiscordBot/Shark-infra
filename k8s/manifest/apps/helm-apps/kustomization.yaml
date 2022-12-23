@@ -1,0 +1,5 @@
+namespace: argocd
+
+
+resources:
+  - prometheus.yaml
