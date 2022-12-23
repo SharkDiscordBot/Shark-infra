@@ -3,4 +3,5 @@ namespace: cloudflared
 
 resources:
   - grafana.yaml
+  - argocd.yaml
   - cloudflared-pvc.yaml

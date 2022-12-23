@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-cloudflared
+spec:
+  selector:
+    matchLabels:
+      name: argocd-cloudflared
+  template:
+    metadata:
+      labels:
+        name: argocd-cloudflared
+    spec:
+      containers:
+        - env:
+            - name: TUNNEL_NAME
+              value: grafana
+            - name: CLOUDFLARED_HOSTNAME
+              value: admin-argocd.purapetino.com
+            - name: CLOUDFLARED_SERVICE
+              value: http://192.168.51.1:80
+          image: ghcr.io/purapetino/cloudflared-tunnel:1.0.2-2022.12.1
+          name: argocd-cloudflared
+          resources:
+            limits:
+              cpu: 70m
+              memory: 512Mi
+          volumeMounts:
+            - mountPath: /root
+              name: cloudflared
+      volumes:
+        - name: cloudflared
+          persistentVolumeClaim:
+            claimName: cloudflared-pvc
+status: {}
