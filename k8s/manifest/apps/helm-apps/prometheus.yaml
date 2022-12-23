@@ -93,6 +93,7 @@ spec:
             storageSpec:
               volumeClaimTemplate:
                 spec:
+                  storageClassName: manual
                   resources:
                     requests:
                       storage: 7Gi
