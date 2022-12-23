@@ -10,8 +10,8 @@ data:
         id: github
         name: GitHub
         config:
-          clientID: $argocd-github-auth-secret:client_id
-          clientSecret: $argocd-github-auth-secret:client_key
+          clientID: $<argocd-github-auth-secret>:client_id
+          clientSecret: $<argocd-github-auth-secret>:client_key
   configManagementPlugins: |
     - name: argocd-vault-plugin
       generate:
