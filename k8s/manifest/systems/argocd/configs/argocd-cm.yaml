@@ -4,6 +4,7 @@ metadata:
   name: argocd-cm
 data:
   url: "https://admin-argocd.purapetino.com"
+  application.instanceLabelKey: argocd.argoproj.io/instance
   dex.config: |
     connectors:
       - type: github
