@@ -19,7 +19,7 @@ spec:
             - name: CLOUDFLARED_HOSTNAME
               value: admin-grafana.purapetino.com
             - name: CLOUDFLARED_SERVICE
-              value: prometheus-grafana.monitoring:80
+              value: http://prometheus-grafana.monitoring:80
           image: ghcr.io/purapetino/cloudflared-tunnel:1.0.2-2022.12.1
           name: grafana-cloudflared
           resources:
