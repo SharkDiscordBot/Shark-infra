@@ -5,3 +5,7 @@ resources:
   - ./pv-0004.yaml
   - ./pv-0005.yaml
   - ./pv-0006.yaml
+  - ./pv-0007.yaml
+  - ./pv-0008.yaml
+  - ./pv-0009.yaml
+  - ./pv-0010.yaml

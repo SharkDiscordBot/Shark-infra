@@ -2,12 +2,14 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: pv0006
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs"
 spec:
-  storageClassName: manual
   capacity:
-    storage: 7Gi
+    storage: 5Gi
   accessModes:
   - ReadWriteOnce
-  hostPath:
-    path: /data/pv0006
-    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Recycle
+  nfs:
+    server: 192.168.8.50
+    path: /nfs/pv0006

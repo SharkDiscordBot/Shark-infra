@@ -4,13 +4,23 @@ PVの管理をこのディレクトリで行います。各アプリケーショ
 
 ## 一覧
 
-| name | storage | path |
-| ---- | ---- | ------ |
-| pv0001 | 1Gi | /data/pv0001 |
-| pv0002 | 1Gi | /data/pv0002 |
-| pv0003 | 3Gi | /data/pv0003 |
-| pv0004 | 5Gi | /data/pv0004 |
-| pv0005 | 5Gi | /data/pv0005 |
-| pv0006 | 7Gi | /data/pv0006 |
+- Storage-Class = nfs
 
-total 6 pvs, 23Gi
+| name | storage | accessModes |
+| ---- | ---- | ------ |
+| pv0001 | 2Gi | ReadWriteOnce |
+| pv0002 | 2Gi | ReadWriteOnce |
+| pv0003 | 2Gi | ReadWriteOnce |
+| pv0004 | 2Gi | ReadWriteMany |
+| pv0005 | 2Gi | ReadWriteMany |
+| pv0006 | 5Gi | ReadWriteOnce |
+| pv0007 | 5Gi | ReadWriteMany |
+| pv0008 | 10Gi | ReadWriteOnce |
+| pv0009 | 10Gi | ReadWriteMany |
+| pv0010 | 20Gi | ReadWriteMany |
+
+total 10 pvs, 60Gi
+
+# PVC
+
+PVCを追加する場合下記の表を更新してください
