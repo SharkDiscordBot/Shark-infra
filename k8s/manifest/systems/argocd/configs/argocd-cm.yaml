@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
-  url: "https://admin-argocd.purapetino.com"
   application.instanceLabelKey: argocd.argoproj.io/instance
   dex.config: |
     connectors:
@@ -13,6 +12,8 @@ data:
         config:
           clientID: $argocd-github-auth-secret:client_id
           clientSecret: $argocd-github-auth-secret:client_key
+        orgs:
+          - name: SharkDiscordBot
   configManagementPlugins: |
     - name: argocd-vault-plugin
       generate:
