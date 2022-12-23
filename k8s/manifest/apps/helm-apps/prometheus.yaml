@@ -78,6 +78,10 @@ spec:
           persistence:
             enabled: true
             size: 5Gi
+            storageClassName: nfs
+            accessModes:
+              - ReadWriteMany
+            size: 5Gi
           datasources:
             datasources.yaml:
               apiVersion: 1

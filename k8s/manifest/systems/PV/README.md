@@ -20,7 +20,3 @@ PVの管理をこのディレクトリで行います。各アプリケーショ
 | pv0010 | 20Gi | ReadWriteMany |
 
 total 10 pvs, 60Gi
-
-# PVC
-
-PVCを追加する場合下記の表を更新してください
