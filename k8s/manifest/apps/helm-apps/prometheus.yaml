@@ -27,6 +27,8 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io # cascade deletion on this App deletion
 spec:
+  plugin:
+    name: argocd-vault-plugin
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
@@ -63,8 +65,8 @@ spec:
             auth.github:
               enabled: true
               allow_sign_up: true
-              client_id: client_id
-              client_secret: client_key
+              client_id: <path:secret/data/grafana#client_id>
+              client_secret: <path:secret/data/grafana#client_key>
               scopes: user:email,read:org
               auth_url: https://github.com/login/oauth/authorize
               token_url: https://github.com/login/oauth/access_token
