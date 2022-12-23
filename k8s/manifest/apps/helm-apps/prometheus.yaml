@@ -93,11 +93,11 @@ spec:
             storageSpec:
               volumeClaimTemplate:
                 spec:
-                  storageClassName: manual
-                  accessModes: ["ReadWriteOnce"]
+                  storageClassName: nfs
+                  accessModes: ["ReadWriteMany"]
                   resources:
                     requests:
-                      storage: 7Gi
+                      storage: 18Gi
             resources:
               requests:
                 memory: 2Gi
