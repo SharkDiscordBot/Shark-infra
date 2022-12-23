@@ -3,3 +3,4 @@ namespace: argocd
 
 resources:
   - prometheus.yaml
+  - grafana-secret.yaml
