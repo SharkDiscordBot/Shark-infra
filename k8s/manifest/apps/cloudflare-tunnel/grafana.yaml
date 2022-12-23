@@ -7,8 +7,6 @@ spec:
   selector:
     matchLabels:
       name: grafana-cloudflared
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -22,7 +20,7 @@ spec:
               value: admin-grafana.purapetino.com
             - name: CLOUDFLARED_SERVICE
               value: prometheus-grafana.monitoring:80
-          image: ghcr.io/purapetino/cloudflared-tunnel:1.0.1-2022.12.1
+          image: ghcr.io/purapetino/cloudflared-tunnel:1.0.2-2022.12.1
           name: grafana-cloudflared
           resources:
             limits:
