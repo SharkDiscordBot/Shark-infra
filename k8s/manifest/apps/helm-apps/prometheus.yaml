@@ -11,7 +11,7 @@ spec:
   source:
     path: charts/kube-prometheus-stack/crds/
     repoURL: https://github.com/prometheus-community/helm-charts.git
-    targetRevision: 43.1.3
+    targetRevision: kube-prometheus-stack-43.1.0
   syncPolicy:
     automated:
       prune: true
