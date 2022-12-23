@@ -3,10 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: cloudflared-pvc
 spec:
-  storageClassName: manual
+  storageClassName: nfs
   resources:
     requests:
       storage: 1Gi
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
