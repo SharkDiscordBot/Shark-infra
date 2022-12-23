@@ -99,3 +99,9 @@ spec:
             resources:
               requests:
                 memory: 2Gi
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+      - Replace=true
