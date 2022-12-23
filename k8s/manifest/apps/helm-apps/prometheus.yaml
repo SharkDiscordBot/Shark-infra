@@ -57,8 +57,8 @@ spec:
             date_formats:
               default_timezone: Asia/Tokyo
             auth:
-              disable_login_form: true
-              oauth_auto_login: true
+              disable_login_form: false
+              oauth_auto_login: false
             auth:
               disable_login_form: true
               oauth_auto_login: true
