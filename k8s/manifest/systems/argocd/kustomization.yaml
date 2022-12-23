@@ -6,3 +6,4 @@ patches:
   - configs/install-patch.yaml
   - configs/argocd-cm.yaml
   - configs/argocd-repo-patch.yaml
+  - configs/argocd-rbac-cm.yaml
