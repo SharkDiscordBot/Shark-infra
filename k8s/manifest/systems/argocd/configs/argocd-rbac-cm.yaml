@@ -7,5 +7,5 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   policy.csv: |
-    g, SharkDiscordBot:infra, role:admin
+    g, SharkDiscordBot:admin-team, role:admin
   policy.default: role:readonly
