@@ -15,7 +15,7 @@ data:
           clientSecret: $argocd-github-auth-secret:client_key
         orgs:
           - name: SharkDiscordBot
-  admin.enabled: "false"
+  admin.enabled: "true"
   configManagementPlugins: |
     - name: argocd-vault-plugin
       generate:
