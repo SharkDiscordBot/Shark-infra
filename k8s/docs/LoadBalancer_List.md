@@ -5,4 +5,3 @@
 | Target_app | Address | note |
 | ---- | ---- | ------ |
 | argocd-server | 192.168.51.1 | Cloudflare障害時にもローカル環境からアクセスできるように |
-| pv0002 | 2Gi | ReadWriteOnce |
