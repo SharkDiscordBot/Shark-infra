@@ -2,10 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
-  annotations:
-    avp.kubernetes.io/path: "secret/data/argocd"
 data:
   policy.default: role:readonly
   policy.csv: |
     g, SharkDiscordBot:admin-team, role:admin
-    g, <email>, role:admin
+    g, $argocd-github-auth-secret:email, role:admin
