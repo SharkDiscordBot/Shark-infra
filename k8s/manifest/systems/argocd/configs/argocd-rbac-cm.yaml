@@ -7,6 +7,5 @@ data:
   policy.csv: |
     g, SharkDiscordBot:admin-team, role:admin
 
-
   policy.matchMode: 'glob'
   scopes: '[cognito:groups, email]'

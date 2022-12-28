@@ -15,6 +15,7 @@ data:
           clientSecret: $argocd-github-auth-secret:client_key
         orgs:
           - name: SharkDiscordBot
+  # うまく動かないのでadminユーザーを有効化
   admin.enabled: "true"
   configManagementPlugins: |
     - name: argocd-vault-plugin
