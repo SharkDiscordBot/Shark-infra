@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: argocd-rbac-cm
 data:
-  policy.default: role:readonly
+  policy.default: ''
   policy.csv: |
     g, SharkDiscordBot:admin-team, role:admin
 
