@@ -19,4 +19,10 @@ PVの管理をこのディレクトリで行います。各アプリケーショ
 | pv0009 | 10Gi | ReadWriteMany |
 | pv0010 | 20Gi | ReadWriteMany |
 
-total 10 pvs, 60Gi
+- Storage-Class = mongodb
+
+| name | storage | accessModes |
+| ---- | ---- | ------ |
+| pv0011 | 30Gi | ReadWriteMany |
+
+total 11 pvs, 90Gi
