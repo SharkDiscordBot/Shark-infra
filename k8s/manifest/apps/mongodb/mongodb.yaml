@@ -26,7 +26,7 @@ spec:
             value: <user>
           - name: MONGO_INITDB_ROOT_PASSWORD
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: mongodb-secret
                 key: password
         resources:
