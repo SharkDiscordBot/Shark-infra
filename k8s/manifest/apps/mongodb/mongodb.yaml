@@ -19,8 +19,8 @@ spec:
         # 認証の設定をargsに加えることもできるがconfigで管理する
         args:
           - "mongod"
-          - "--config"
-          - "/etc/mongod.conf"
+          #- "--config"
+          #- "/etc/mongod.conf"
         env:
           - name: MONGO_INITDB_ROOT_USERNAME
             value: <user>

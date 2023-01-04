@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: argocd
+  name: mongodb-service
 spec:
   ports:
   - name: mongodb-service
