@@ -19,8 +19,8 @@ spec:
         # 認証の設定をargsに加えることもできるがconfigで管理する
         args:
           - "mongod"
-          #- "--config"
-          #- "/etc/mongod.conf"
+          - "--config"
+          - "/etc/mongod.conf"
         env:
           - name: MONGO_INITDB_ROOT_USERNAME
             value: <user>
@@ -34,7 +34,7 @@ spec:
             # モニタリング必須,状況に応じて変える
             memory: "2Gi"
             cpu: "2"
-          volumeMounts:
+        volumeMounts:
             - mountPath: /data/db
               name: database
             - mountPath: /etc
