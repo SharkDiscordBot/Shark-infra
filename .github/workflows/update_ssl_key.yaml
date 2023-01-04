@@ -21,5 +21,6 @@ jobs:
             CA管理サーバーで更新を行いvaultの証明書を更新してください
             作業が終了次第このissueは閉じてください
 
+            @purapetino
           labels: |
             優先度: 高
