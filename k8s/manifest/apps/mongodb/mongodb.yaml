@@ -20,7 +20,7 @@ spec:
         args:
           - "mongod"
           - "--config"
-          - "/etc/mongod.conf"
+          - "/etc/mongodb/cfg/mongod.conf"
         env:
           - name: MONGO_INITDB_ROOT_USERNAME
             value: <user>
@@ -37,7 +37,7 @@ spec:
         volumeMounts:
             - mountPath: /data/db
               name: database
-            - mountPath: /etc
+            - mountPath: /etc/mongodb/cfg
               name: config
         ports:
         - containerPort: 27017
