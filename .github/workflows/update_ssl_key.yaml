@@ -1,0 +1,25 @@
+# 月初めにSSL証明書の更新をissueで通知
+
+name: update SSL
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  create_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create an issue
+        uses: actions-ecosystem/action-create-issue@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          title: '【定期】SSL証明書の更新を行ってください'
+          body: |
+            ## 内容
+
+            CA管理サーバーで更新を行いvaultの証明書を更新してください
+            作業が終了次第このissueは閉じてください
+
+          labels: |
+            優先度: 高
