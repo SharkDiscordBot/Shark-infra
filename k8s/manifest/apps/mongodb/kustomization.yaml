@@ -1,5 +1,8 @@
 namespace: mongodb
 
-# TODO: mongodb server
-#resources:
-#  - service.yaml
+resources:
+  - service.yaml
+  - volume.yaml
+  - secret.yaml
+  - mongodb-cm.yaml
+  - mongodb.yaml

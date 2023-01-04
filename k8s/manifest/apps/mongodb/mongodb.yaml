@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-server
+  annotations:
+    avp.kubernetes.io/path: "secret/data/mongodb"
+spec:
+  selector:
+    matchLabels:
+      app: mongodb-server
+  template:
+    metadata:
+      labels:
+        app: mongodb-server
+    spec:
+      containers:
+      - name: mongodb-server
+        image: mongo:6.0.3
+        # 認証の設定をargsに加えることもできるがconfigで管理する
+        args:
+          - "mongod"
+          - "--config"
+          - "/etc/mongod.conf"
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: <user>
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: mongodb-secret
+                key: password
+        resources:
+          limits:
+            # モニタリング必須,状況に応じて変える
+            memory: "2Gi"
+            cpu: "2000m"
+          volumeMounts:
+            - mountPath: /data/db
+              name: database
+            - mountPath: /etc
+              name: config
+        volumes:
+        - name: database
+          persistentVolumeClaim:
+            claimName: mongodb-volume
+        - name: config
+          configMap:
+            name: mongodb-cm
+        ports:
+        - containerPort: 27017

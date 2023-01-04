@@ -4,10 +4,10 @@ metadata:
   name: argocd
 spec:
   ports:
-  - name: "argo-http"
-    port: 80
+  - name: mongodb-service
+    port: 27017
     protocol: TCP
-    targetPort: 8080
+    targetPort: 27017
 
   selector:
     app.kubernetes.io/name: mongodb-server
