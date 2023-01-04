@@ -9,7 +9,7 @@ spec:
     storage: 30Gi
   accessModes:
   - ReadWriteMany
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 192.168.8.51
     path: /nfs/pv0011
