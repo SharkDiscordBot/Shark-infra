@@ -39,12 +39,12 @@ spec:
               name: database
             - mountPath: /etc
               name: config
-        volumes:
-        - name: database
-          persistentVolumeClaim:
-            claimName: mongodb-volume
-        - name: config
-          configMap:
-            name: mongodb-cm
         ports:
         - containerPort: 27017
+      volumes:
+      - name: database
+        persistentVolumeClaim:
+          claimName: mongodb-volume
+      - name: config
+        configMap:
+          name: mongodb-cm
