@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: mongodb-server
+      name: mongodb-server
     spec:
       containers:
       - name: mongodb-server
