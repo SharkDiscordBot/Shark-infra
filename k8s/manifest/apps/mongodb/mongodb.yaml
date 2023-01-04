@@ -33,7 +33,7 @@ spec:
           limits:
             # モニタリング必須,状況に応じて変える
             memory: "2Gi"
-            cpu: "2000m"
+            cpu: "2"
           volumeMounts:
             - mountPath: /data/db
               name: database
