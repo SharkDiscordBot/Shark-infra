@@ -1,0 +1,8 @@
+namespace: debug
+
+resources:
+  - nginx-cm.yaml
+  - nginx.yaml
+  - ssl.yaml
+  - service.yaml
+

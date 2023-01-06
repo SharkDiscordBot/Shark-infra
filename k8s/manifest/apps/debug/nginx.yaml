@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-nginx
+spec:
+  selector:
+    matchLabels:
+      app: dev-nginx
+  template:
+    metadata:
+      labels:
+        app: dev-nginx
+    spec:
+      containers:
+      - name: dev-nginx
+        image: nginx:1.23.3
+        resources:
+          limits:
+            # モニタリング必須,状況に応じて変える
+            memory: "300Mi"
+            cpu: "300m"
+        volumeMounts:
+            - mountPath: /etc/nginx/test/ssl
+              name: ssl
+            - mountPath: /etc/nginx/conf.d
+              name: config
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+      volumes:
+      - name: ssl
+        secret:
+          secretName: ssl
+          defaultMode: 0600
+          items:
+            - key: certificate
+              path: certificate.pem
+              mode: 0600
+            - key: certificate_key
+              path: certificate_key.pem
+              mode: 0600
+      - name: config
+        configMap:
+          name: nginx-cm

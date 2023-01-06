@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ssl
+  annotations:
+    avp.kubernetes.io/path: "secret/data/ssl"
+type: Opaque
+data:
+  certificate: <certificate>
+  certificate_key: <certificate_key>
