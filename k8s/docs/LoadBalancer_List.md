@@ -5,3 +5,5 @@
 | Target_app | Address | note |
 | ---- | ---- | ------ |
 | argocd-server | 192.168.51.1 | Cloudflare障害時にもローカル環境からアクセスできるように |
+| mongodb-server | 192.168.51.2 | 外部からでもアクセスできるようにCloudflareで公開 |
+| dev-nginx | 192.168.51.50 | 本番環境とほぼ同じ環境でのテスト用 |
