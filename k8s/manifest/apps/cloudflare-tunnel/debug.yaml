@@ -18,8 +18,7 @@ spec:
             - name: CLOUDFLARED_HOSTNAME
               value: debug-api.purapetino.com
             - name: CLOUDFLARED_SERVICE
-              #value: http://dev-nginx-service.debug:80
-              value: http://192.168.51.50:80
+              value: http://dev-nginx-service.debug:80
           image: ghcr.io/purapetino/cloudflared-tunnel:1.0.2-2022.12.1
           name: debug-api-cloudflared
           resources:
